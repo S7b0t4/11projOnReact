@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import {useRef, useState} from "react";
+import Cvad from "./Comp/Cvad/Cvad";
 
 function App() {
+    const [out, setOut] = useState()
+    const cvad = () => {
+        setOut(<Cvad />)
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="title">Вычесление плошади</div>
+      <div className="row_btn">
+          <button onClick={cvad}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Kvadrato.svg/800px-Kvadrato.svg.png" alt=""/></button>
+      </div>
+      <div className="row">
+          {out}
+      </div>
     </div>
   );
 }
